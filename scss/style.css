@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  color: white;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3em 3em;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+header .logo span {
+  font-family: "Chelsea Market", system-ui;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+header ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+header ul li {
+  list-style: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+header ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+}
+header ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: red;
+  transform: scaleX(0);
+  transition: transform 0.2s linear;
+}
+header ul li a:hover::before {
+  transform: scaleX(1);
+}
+header .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgb(36, 35, 35);
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+}
+header .search-bar .material-symbols-outlined {
+  color: gray;
+  font-size: 1rem;
+}
+header .search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 0.7rem;
+}
+header .search-bar:hover {
+  border: 1px solid red;
+}/*# sourceMappingURL=style.css.map */

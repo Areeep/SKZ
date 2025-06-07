@@ -1,0 +1,103 @@
+@use "../global/index" as glb;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3em 3em;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  backdrop-filter: blur(10px);
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  
+    span {
+      font-family: glb.$logo-font;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    li {
+      list-style: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background: red;
+          transform: scaleX(0);
+          transition: transform 0.2s linear;
+        }
+
+        &:hover::before {
+          transform: scaleX(1);
+        }
+      }
+
+      // &:hover {
+      //   background-color: white;
+
+      //   a {
+      //     color: red;
+      //   }
+      // }
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgb(36, 35, 35);
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 1px solid transparent;
+
+    .material-symbols-outlined {
+      color: gray;
+      font-size: 1rem;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+      font-size: 0.7rem;
+    }
+
+    &:hover {
+      border: 1px solid red;
+    }
+  }
+}

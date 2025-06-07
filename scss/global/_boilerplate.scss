@@ -1,0 +1,14 @@
+@use "./typography" as tpg;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: tpg.$primary-font;
+}
+
+body {
+  margin: 0;
+  color: white;
+  background-color: black;
+}
