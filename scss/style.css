@@ -11,53 +11,67 @@ body {
   background-color: black;
 }
 
-header {
+header .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.3em 3em;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   background: transparent;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
-header .logo {
+header .navbar .logo {
   display: flex;
   align-items: center;
   gap: 1em;
 }
-header .logo img {
+header .navbar .logo img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
 }
-header .logo span {
-  font-family: "Chelsea Market", system-ui;
+@media (max-width: 475px) {
+  header .navbar .logo img {
+    width: 30px;
+    height: auto;
+  }
+}
+header .navbar .logo span {
+  font-family: "Geo", sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
+  display: none;
 }
-header ul {
+@media (max-width: 475px) {
+  header .navbar .logo span {
+    display: flex;
+  }
+}
+header .navbar ul {
   display: flex;
   justify-content: center;
   gap: 1.2rem;
   padding: 10px 15px;
   border-radius: 5px;
 }
-header ul li {
+header .navbar ul li {
   list-style: none;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
 }
-header ul li a {
+header .navbar ul li a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
   position: relative;
 }
-header ul li a::before {
+header .navbar ul li a::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -67,10 +81,15 @@ header ul li a::before {
   transform: scaleX(0);
   transition: transform 0.2s linear;
 }
-header ul li a:hover::before {
+header .navbar ul li a:hover::before {
   transform: scaleX(1);
 }
-header .search-bar {
+@media (max-width: 475px) {
+  header .navbar ul {
+    display: none;
+  }
+}
+header .navbar .search-bar {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -79,17 +98,125 @@ header .search-bar {
   border-radius: 25px;
   border: 1px solid transparent;
 }
-header .search-bar .material-symbols-outlined {
+header .navbar .search-bar .material-symbols-outlined.search {
   color: gray;
   font-size: 1rem;
 }
-header .search-bar input {
+header .navbar .search-bar input {
   border: none;
   outline: none;
   background: transparent;
   color: white;
   font-size: 0.7rem;
 }
-header .search-bar:hover {
+header .navbar .search-bar:hover {
+  border: 1px solid red;
+}
+@media (max-width: 475px) {
+  header .navbar .search-bar {
+    display: none;
+  }
+}
+header .navbar .material-symbols-outlined.menu {
+  display: none;
+}
+@media (max-width: 475px) {
+  header .navbar .material-symbols-outlined.menu {
+    display: flex;
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 475px) {
+  header .navbar {
+    padding-top: 1em;
+  }
+}
+header .sidebar {
+  background: black;
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 2em;
+}
+header .sidebar .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .sidebar .head .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+header .sidebar .head .logo img {
+  width: 30px;
+  height: auto;
+  border-radius: 25px;
+}
+header .sidebar .head .logo span {
+  font-size: 1.5rem;
+  font-family: "Geo", sans-serif;
+  font-weight: 600;
+}
+header .sidebar .head .material-symbols-outlined {
+  color: white;
+  font-size: 1.5rem;
+}
+header .sidebar ul {
+  padding: 0;
+}
+header .sidebar ul li {
+  list-style: none;
+  margin-bottom: 20px;
+  text-align: left;
+  border-bottom: 1px solid rgb(82, 82, 82);
+  padding-bottom: 10px;
+}
+header .sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+header .sidebar ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: red;
+  transform: scaleX(0);
+  transition: transform 0.2s linear;
+}
+header .sidebar ul li a:hover::before {
+  transform: scaleX(1);
+}
+header .sidebar .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgb(36, 35, 35);
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+header .sidebar .search-bar .material-symbols-outlined.search {
+  color: gray;
+  font-size: 1rem;
+}
+header .sidebar .search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 0.7rem;
+}
+header .sidebar .search-bar:hover {
   border: 1px solid red;
 }/*# sourceMappingURL=style.css.map */
