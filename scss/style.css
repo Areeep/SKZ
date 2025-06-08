@@ -302,9 +302,4 @@ header .sidebar .search-bar:hover {
 }
 .hero__cta .release:hover {
   background-color: rgba(255, 255, 255, 0.1);
-}
-@media (max-width: 475px) {
-  .hero__cta .release {
-    width: 100%;
-  }
 }/*# sourceMappingURL=style.css.map */
