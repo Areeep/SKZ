@@ -246,12 +246,11 @@ header .sidebar .search-bar:hover {
 .hero * {
   position: relative;
   z-index: 2;
-}
-.hero *:not(:last-child) {
   margin-left: 5%;
+  margin-right: 5%;
 }
 .hero .header {
-  font-size: 4rem;
+  font-size: clamp(2em, 4vw, 6em);
   margin-bottom: 1rem;
 }
 .hero .header__red {
@@ -265,30 +264,47 @@ header .sidebar .search-bar:hover {
   color: black;
 }
 .hero p {
-  font-size: 1.5rem;
+  font-size: clamp(0.8rem, 2vw, 2rem);
   text-wrap: wrap;
   margin-bottom: 2rem;
 }
 .hero .artist, .hero .release {
   padding: 0.8em 1.6em;
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
   font-weight: 700;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   color: white;
 }
-.hero .artist {
-  background-color: red;
-  margin-right: 10px;
+.hero__cta {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.hero .artist:hover {
+.hero__cta .artist {
+  background-color: red;
+  margin: 0;
+}
+.hero__cta .artist:hover {
   background-color: rgb(145, 18, 18);
 }
-.hero .release {
+@media (max-width: 475px) {
+  .hero__cta .artist {
+    width: 100%;
+  }
+}
+.hero__cta .release {
   background-color: transparent;
   border: 2px solid white;
+  margin: 0;
 }
-.hero .release:hover {
+.hero__cta .release:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 475px) {
+  .hero__cta .release {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

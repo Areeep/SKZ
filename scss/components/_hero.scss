@@ -26,14 +26,12 @@
   * {
     position: relative;
     z-index: 2;
-  }
-
-  *:not(:last-child) {
     margin-left: 5%;
+    margin-right: 5%;
   }
 
   .header {
-    font-size: clamp(2rem, 4rem, 6rem);
+    font-size: clamp(2em, 4vw, 6em);
     margin-bottom: 1rem;
 
     &__red {
@@ -50,14 +48,14 @@
   }
 
   p {
-    font-size: clamp(0.8rem, 1.5rem, 2rem);
+    font-size: clamp(0.8rem, 2vw, 2rem);
     text-wrap: wrap;
     margin-bottom: 2rem;
   }
 
   .artist, .release {
     padding: 0.8em 1.6em;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
     font-weight: 700;
     border-radius: 8px;
     border: none;
@@ -65,21 +63,38 @@
     color: white;
   }
 
-  .artist {
-    background-color: red;
-    margin-right: 10px;
+  &__cta {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
 
-    &:hover {
-      background-color: rgb(145, 18, 18);
+    .artist {
+      background-color: red;
+      margin: 0;
+  
+      &:hover {
+        background-color: rgb(145, 18, 18);
+      }
+
+      @include glb.respond-max(xs){
+        width: 100%;
+      }
+    }
+  
+    .release {
+      background-color: transparent;
+      border: 2px solid white;
+      margin: 0;
+  
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      @include glb.respond-max(xs){
+        width: 100%;
+      }
     }
   }
 
-  .release {
-    background-color: transparent;
-    border: 2px solid white;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-  }
 }
