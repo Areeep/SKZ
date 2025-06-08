@@ -1,0 +1,85 @@
+@use "../global/index" as glb;
+
+.hero {
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100dvh;
+  background-image: url(../images/hero-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); // ubah angka untuk tingkat gelap
+    z-index: 1;
+  }
+
+  // semua konten di dalam .hero diberi posisi relative dan z-index lebih tinggi
+  * {
+    position: relative;
+    z-index: 2;
+  }
+
+  *:not(:last-child) {
+    margin-left: 5%;
+  }
+
+  .header {
+    font-size: clamp(2rem, 4rem, 6rem);
+    margin-bottom: 1rem;
+
+    &__red {
+      margin: 0;
+      background-color: red;
+      padding: 1px 8px;
+      border-radius: 8px;
+    }
+
+    &__black {
+      margin: 0;
+      color: black;
+    }
+  }
+
+  p {
+    font-size: clamp(0.8rem, 1.5rem, 2rem);
+    text-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .artist, .release {
+    padding: 0.8em 1.6em;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+
+  .artist {
+    background-color: red;
+    margin-right: 10px;
+
+    &:hover {
+      background-color: rgb(145, 18, 18);
+    }
+  }
+
+  .release {
+    background-color: transparent;
+    border: 2px solid white;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
