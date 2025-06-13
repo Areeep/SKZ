@@ -318,7 +318,7 @@ header .sidebar .search-bar:hover {
   padding-inline: 5%;
 }
 .features h1 {
-  margin-block: 20px;
+  margin-block: 50px;
   font-size: clamp(2rem, 2vw, 3rem);
 }
 .features .feature-grid {
@@ -399,4 +399,44 @@ header .sidebar .search-bar:hover {
 }
 .features .view-all:hover {
   background-color: red;
+}
+
+.about {
+  padding-inline: 5%;
+}
+.about__header {
+  font-size: clamp(2rem, 2vw, 3rem);
+  margin-block: 50px;
+}
+.about__header--groupName {
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.about__grid {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2vw;
+}
+.about__grid img {
+  width: 50%;
+  border-radius: 8px;
+}
+.about__grid p {
+  width: 50%;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+@media (max-width: 475px) {
+  .about__grid p {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .about__grid {
+    flex-direction: column;
+  }
+  .about__grid img, .about__grid p {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,45 @@
+@use "../global/index" as glb;
+
+.about {
+  padding-inline: 5%;
+
+  &__header {
+    font-size: clamp(2rem, 2vw, 3rem);
+    margin-block: 50px;
+
+    &--groupName {
+      background-color: red;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+
+    img {
+      width: 50%;
+      border-radius: 8px;
+    }
+    
+    p {
+      width: 50%;
+      font-size: clamp(1rem, 1.5vw, 2rem);
+      
+      @include glb.respond-max(xs) {
+        width: 100%;
+      }
+    }
+
+    @include glb.respond-max(md) {
+      flex-direction: column;
+
+      img, p {
+        width: 100%;
+      }
+    }
+  }
+}
